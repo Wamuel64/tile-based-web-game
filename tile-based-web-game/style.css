@@ -1,0 +1,309 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+.sides {
+    float: left;
+    width: 25%;
+    height: 600px;
+}
+.playerTitleP2 {
+    background-color: #1e67ce;
+}
+.playerTitleP1 {
+    background-color: #ce1e1e;
+}
+.playerTitleP1 h2, .playerTitleP2 h2 {
+    text-align: center;
+    font-family: cursive;
+    font-size: 2rem;
+    margin: 0;
+    padding: 1rem;
+    color: white;
+}
+.playerStats h2 {
+    text-align: center;
+    font-family: monospace;
+    font-size: 1.9rem;
+    margin: 0;
+    padding: 1rem;
+}
+.playerStats img {
+    position: absolute;
+    visibility: hidden;
+    width: 32px;
+    height: 32px;
+}
+#p1HealthColor {
+    background-color: #29ce31;
+}
+#p2HealthColor {
+    background-color: #29ce31;
+}
+.sides .attack, .defend {
+    display: block;
+    padding: 1rem;
+    margin: 1rem auto;
+    width: 8rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    opacity: 0.5;
+}
+.activeButtons {
+    box-shadow: 0 0 10px black;
+    opacity: 1 !important;
+}
+.attack {
+    background: radial-gradient(white, red);
+}
+.defend {
+    background: radial-gradient(white, blue);
+}
+#header {
+    background: black;
+}
+#header h1 {
+    text-align: center;
+    font-family: fantasy;
+    font-size: 3rem;
+    margin: auto;
+    padding: 1rem;
+    text-shadow: 0 0 10px white;
+    color: black;
+    animation-name: headerColor;
+    animation-duration: 10s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+.feed {
+    background-color: black;
+    height: 273px;
+}
+.feed p {
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: fantasy;
+    padding-top: 120px;
+    color: white;
+    margin: 0;
+}
+.feed p:first-letter {
+    text-transform: capitalize;
+}
+@keyframes headerColor {
+    0% {color: orangered;}
+    25% {color: black; text-shadow: 0 0 10px black;}
+    26% {text-shadow: -500px 0 black;}
+    50% {color: red; margin-left: 500px; text-shadow: -500px 0 yellow;}
+    74% {text-shadow: -500px 0 black;}
+    75% {color: black; text-shadow: 0 0 10px black;}
+    100% {color: orangered;}
+}
+#winner-name {
+    display: inline-block;
+    visibility: hidden;
+    font-family: monospace;
+    font-size: 5rem;
+    padding: 0 5rem;
+    transform: skew(45deg) rotate(-12deg);
+    color: transparent;
+    text-shadow: -5px 0 white, -10px 0 #1e67ce;
+}
+#winner {
+    position: absolute;
+    left: -60%;
+    top: 45%;
+    z-index: +1;
+}
+#winner:first-child div {
+    display: inline-block;
+    background: linear-gradient(-15deg, #ce1e1e 50%, #1e67ce 50%); 
+    transform: skew(-45deg);
+    box-shadow: 0 0 50px black;
+}
+.show-win-div {
+    animation-name: winAnimation;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+.show-win-h1 {
+    animation-name: winShowH1;
+    animation-delay: 0.8s;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+}
+@keyframes winAnimation {
+    0% {left: -60%;}
+    50% {left: 35%;}
+    100% {left: 27%;}
+}
+@keyframes winShowH1 {
+    0% {visibility: hidden;}
+    50% {visibility: visible;  transform: scale(1.5, 1.5) skew(45deg) rotate(-12deg);}
+    100% {transform: scale(1, 1) skew(45deg) rotate(-12deg); visibility: visible;}
+}
+.attackPlayer-right {
+    position: relative;
+    animation-name: attackAnimationRight;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
+}.attackPlayer-left {
+    position: relative;
+    animation-name: attackAnimationLeft;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
+}.attackPlayer-top {
+    position: relative;
+    animation-name: attackAnimationTop;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
+}.attackPlayer-bottom {
+    position: relative;
+    animation-name: attackAnimationBottom;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
+}
+@keyframes attackAnimationRight {
+    0% {left : 0;}
+    25% {left: -10px;}
+    50% {left: -20px;}
+    75% {left: -30px;}
+    100% {left: 0;}
+}
+@keyframes attackAnimationLeft {
+    0% {right : 0;}
+    25% {right: -10px;}
+    50% {right: -20px;}
+    75% {right: -30px;}
+    100% {right: 0;}
+}
+@keyframes attackAnimationTop {
+    0% {bottom : 0;}
+    25% {bottom: -10px;}
+    50% {bottom: -20px;}
+    75% {bottom: -30px;}
+    100% {bottom: 0;}
+}
+@keyframes attackAnimationBottom {
+    0% {top : 0;}
+    25% {top: -10px;}
+    50% {top: -20px;}
+    75% {top: -30px;}
+    100% {top: 0;}
+}
+.defend-animation {
+    animation-name: defendAnimation;
+    animation-duration: 1s;
+}
+@keyframes defendAnimation {
+    0% {}
+    50% {transform: scale(3, 3);}
+    100% {}
+} 
+@keyframes attackNum {
+    0% {text-shadow: 10px 10px red;}
+    33% {text-shadow: -10px -10px red;}
+    66% {text-shadow: -10px 10px red;}
+    100% {text-shadow: 10px -10px red;}
+}
+#Bg-Music {
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+#Bg-Music img {
+    width: 16px;
+    height: 16px;
+}
+#Bg-Music h4 {
+    display: inline;
+    color: white;
+}
+#how-to-button {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+#how-to-button button {
+    font-weight: bold;
+}
+#how-to-guide {
+    position: fixed;
+    left: 50%;
+    top: 50px;
+    width: 40rem;
+    margin-left: -20rem;
+    z-index: +1;
+    display: none;
+}
+#how-to-guide h2 {
+    text-align: center;
+    font-family: cursive;
+    background-color: #d0d6e0;
+    padding: 0.6rem 0;
+    margin: 0;
+}
+#how-to-guide p {
+    text-align: justify;
+    padding: 1rem 2rem;
+    background-color: black;
+    color: white;
+    margin: 0;
+}
+#how-to-guide button {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+tr td {
+    width: 60px;
+    height: 60px;
+    border: 1px solid gray;
+}
+table, td {
+    border-collapse: collapse;
+}
+table {
+    float: left;
+    width: 50%;
+    margin: auto;
+}
+.blocked {
+    background: linear-gradient(45deg, black, white, black, white, black, white);
+}
+#weapon1 {
+    background: url(Images/politics.png), radial-gradient(white, white, blue);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#weapon2 {
+    background: url(Images/music-player.png), radial-gradient(white, white, orange);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#weapon3 {
+    background: url(Images/frown.png), radial-gradient(white, white, green);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#weapon4 {
+    background: url(Images/spinning-wheel.png), radial-gradient(white, white, purple);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#player1 {
+    background: url(Images/player1.png), radial-gradient(white, white, #ce1e1e);
+}
+#player2 {
+    background: url(Images/player2.png), radial-gradient(white, white, #1e67ce);
+}
+.move-area-p1 {
+    border: 1px solid black;
+    box-shadow: 1px 1px 10px black;
+}
+.move-area-p2 {
+    border: 1px solid black;
+    box-shadow: 1px 1px 10px black;
+}

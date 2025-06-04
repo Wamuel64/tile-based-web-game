@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="viewport=device-width, device-width=1.0">
+        <link href="style.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="winner">
+            <div>
+                <h1 id="winner-name"></h1>
+            </div>
+        </div>
+            
+        <div id="header">
+            <h1>The Game With No Name</h1>
+        </div>
+        <div class="sides" id="player1Interface">
+            <div class="playerTitleP1">
+                <h2>Player One</h2>
+            </div>
+            <div class="playerStats">
+                <div id="p1HealthColor">
+                    <h2>HEALTH: <span id="p1Health">100</span><img src="Images/security.png" id="player1Defense"></h2>
+                </div>
+                <div id="player1AttackColor">
+                    <h2>ATTACK: <span id="p1Attack">10</span><img id="player1AttackPic"></h2>
+                </div>
+            </div>
+            <button class="attack" id="p1Attack">Attack</button>
+            <button class="defend" id="p1Defend">Defend</button>
+            <div class="feed" id="p1Feed">
+            </div>
+        </div>
+        <table>
+        <tbody id="Board" class="theGame">
+            <tr id="row-1">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr id="row-2">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr id="row-3">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr id="row-4">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr id="row-5">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr id="row-6">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr id="row-7">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr id="row-8">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr id="row-9">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr id="row-10">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+        </table>
+        <div class="sides" id="player2Interface">
+            <div class="playerTitleP2">
+                <h2>Player Two</h2>
+            </div>
+            <div class="playerStats">
+                <div id="p2HealthColor">
+                    <h2>HEALTH: <span id="p2Health">100</span><img src="Images/security.png" id="player2Defense"></h2>
+                </div>
+                <div id="player2AttackColor">
+                    <h2>ATTACK: <span id="p2Attack">10</span><img id="player2AttackPic"></h2>
+                </div>
+            </div>
+            <button class="attack" id="p2Attack">Attack</button>
+            <button class="defend" id="p2Defend">Defend</button>
+            <div class="feed" id="p2Feed">
+            </div>
+        </div>
+        
+        <div id="Bg-Music">
+            <h4>Music:</h4>
+            <button onClick="playMusic()"><img src="Images/play.png" id="music"></button>
+            <button onClick="lowerVolume()"><img src="Images/volume-down-indicator.png"></button>
+            <button onClick="higherVolume()"><img src="Images/volume-up-indicator.png"></button>
+        </div>
+        
+        <div id="how-to-button">
+            <button onClick="showGuide()">How To Play</button>
+        </div>
+        
+        <div id="how-to-guide">
+            <h2>How to win <button onClick="hideGuide()">X</button></h2>
+            <p>In order to win "The Game with No Name" you need to pick up a better weapon than that of your opponent and start a fight with them. The player who's health drops to zero first loses!</p>
+            <h2>Controls</h2>
+            <p><b>How to Move:</b><br />To move, click on a box with a shadow around it. Who's turn it is is signified by who has boxes with shadows around their player.<br /><br />
+            <b>Pick up a Weapon:</b><br />To pick up a weapon simply move on or over that weapon. Weapons are the silly pictures on the board! If you already have a weapon and you pick up another, your old weapon will be replaced.<br /><br />
+            <b>Attack a Player:</b><br />Once you're ready to attack. Try to place your player adjacent to the other player. This will start the attack sequence. If you are the one to initiate the attack the two buttons on your side of the screen will light up. You can choose to either attack the player and deal your attack in damage or press "Defend" which will ensure you only take half damage if the enemy decides to attack on their next go.<br /><br />
+            <b>Restart the Game:</b><br />To restart the game or play again just refresh page.</p>
+        </div>
+        
+        <script src="jquery-3.4.1.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
